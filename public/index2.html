@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Robot Painter 🤖🎨🖌</title>
+</head>
+<body>
+
+<!--<img src="van-g.jpg" width="770" height="974" alt="">-->
+
+<div id="scratch"><img src="van-g.jpg"/></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+
+<script src="vivus.js"></script>
+
+<script src="image-tracer.js"></script>
+
+<script src="scratch-it.js"></script>
+
+<script>
+  var containerEl = document.getElementById('scratch'),
+      overlayImgUrl = './canvas.jpg',
+      brushImgUrl = './brush.png',
+      revealPercent = 50;
+
+  function onReveal(){
+    console.log("Done revealing?")
+  }
+
+   ScratchIt(containerEl, overlayImgUrl, brushImgUrl, onReveal, revealPercent);
+
+
+  // Loading an image, tracing with the 'posterized2' option preset, and appending the SVG to an element with id="svgcontainer"
+  // console.log("Loading the image into a SVG");
+  // ImageTracer.imageToSVG(
+  //     'van-g.jpg', /* input filename / URL */
+  //     function(svgstr){
+  //       console.log("finished making the svg. Putting it on the DOM.");
+  //
+  //       ImageTracer.appendSVGString( svgstr, 'svgcontainer' );
+  //       let paths = document.querySelectorAll('path')
+  //
+  //       console.log("swapping path colors");
+  //       let pathsArray = [...paths];
+  //       pathsArray.forEach(path => {
+  //         // path.setAttribute("stroke", path.getAttribute("fill"));
+  //         path.setAttribute("fill", "none");
+  //       })
+  //
+  //       var svgElement = document.getElementById('svgcontainer').children[0];
+  //
+  //       svgElement.id = "actualSvg";
+  //
+  //       console.log("drawing svg...");
+  //
+  //       new Vivus('actualSvg', {duration: 500, type: "oneByOne"}, function() {
+  //         console.log("done!")
+  //       });
+  //
+  //     }, /* callback function to run on SVG string result */
+  //     'posterized2' /* Option preset */
+  //
+  // );
+</script>
+
+</body>
+</html>

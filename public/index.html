@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Robot Painter 🤖🎨🖌</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="demo/css/style.css">
+  <script src="demo/js/raf.js"></script>
+</head>
+<body>
+
+  <div id="scratch"><img src="van-g.jpg" /></div>
+
+  <script>
+    //getTransformToElement polyfill from https://gist.github.com/p0rsche/bf9f43c4716cff3f1e6ad3e587e829aa
+    SVGElement.prototype.getTransformToElement = SVGElement.prototype.getTransformToElement || function(toElement) {
+      return toElement.getScreenCTM().inverse().multiply(this.getScreenCTM());
+    };
+  </script>
+
+  <script src="scratch-it.js"></script>
+
+  <script src="vivus.js"></script>
+
+  <script src="image-tracer.js"></script>
+
+  <script>
+    console.log("Loading the image into a SVG");
+    ImageTracer.imageToSVG(
+        'van-g.jpg',
+        function(svgstr){
+          console.log("Finished making the svg. Putting it on the DOM.");
+
+          ImageTracer.appendSVGString( svgstr, 'svgcontainer' );
+
+          //initializing ScratchIt stuff
+          var containerEl = document.getElementById('scratch'),
+              overlayImgUrl = '../blank_cover.png',
+              brushImgUrl = 'brush.png',
+              revealPercent = 100;
+
+          console.log("Initializing ScratchIt library");
+          ScratchIt(containerEl, overlayImgUrl, brushImgUrl, onReveal, revealPercent);
+        },
+        'posterized2'
+    );
+
+    function onReveal(){ }
+  </script>
+</body>
+</html>
