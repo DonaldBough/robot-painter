@@ -6,8 +6,8 @@ The robot converts the paintings to an SVG file, which breaks them down into "li
 I haven't done a fun project in a while, so it's been nice to go off and do something just because!
 
 
-### Before and After
+# Before and After
 <img src="before-and-after.png" width="45%">
 
-### Click on the image to watch it in action!
-[![Watch It Get Painted](during-the-painting.png?raw=true "Title")](https://dms.licdn.com/playlist/C5605AQEUk2UUe-blfQ/mp4-640p-30fp-crf28/0?e=1598486400&v=beta&t=JuO0POY-MkmI8FqQFYevkJdJQcZZEZL_7lj7nRnzcg8)
+# Here's a portion of the algorithm live in action!
+https://user-images.githubusercontent.com/5701552/156943120-dddafadc-940a-4d65-8ef1-66ec11f667bb.mp4
